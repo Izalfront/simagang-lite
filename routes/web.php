@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LecturerController;
 use App\Http\Controllers\LogbookController;
 use App\Http\Controllers\SupervisorController;
@@ -17,10 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/login', [LoginController::class, 'index']);
 Route::resource('lecturers', LecturerController::class);
 Route::resource('logbooks', LogbookController::class);
 Route::resource('supervisors', SupervisorController::class);
