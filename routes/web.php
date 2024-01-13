@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/login', [LoginController::class, 'index']);
-Route::resource('lecturers', LecturerController::class);
-Route::resource('logbooks', LogbookController::class);
-Route::resource('supervisors', SupervisorController::class);
-Route::resource('users', UserController::class);
+Route::get('/lecturers', [LecturerController::class, 'index']);
+Route::get('/logbooks', [LogbookController::class, 'index']);
+// Route::get('supervisors', SupervisorController::class);
+// Route::get('users', UserController::class);
