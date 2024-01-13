@@ -15,7 +15,20 @@
             <div class="card-body">
                 <div class="head-section">
                     <div>
-                        <a href="#" class="btn primary__btn">Tambah</a>
+                        <a href="/add-logbook" class=" primary__btn">Tambah</a>
+                        <!-- section convert file pdf, word, excel start -->
+                        <div class="convert">
+                            <div>
+                                <a href="#" class="btn btn-pdf">PDF</a>
+                            </div>
+                            <div>
+                                <a href="#" class="btn btn-word">WORD</a>
+                            </div>
+                            <div>
+                                <a href="#" class="btn btn-excel">EXCEL</a>
+                            </div>
+                        </div>
+                        <!-- section convert file pdf, word, excel end -->
                     </div>
                     <!-- search start -->
                     <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
@@ -49,6 +62,59 @@
                     </script>
                     <!-- search end -->
                 </div>
+                <!-- ======== section table start ========== -->
+                <div class="tabel-center">
+                    <table contenteditable="" style="--tableWidth: 420px;">
+                        <caption>
+                            logbook magang</caption>
+                        <thead style="--headerFontSize: 12px; --headerFontColor: #ffffff; --headerFontBGColor: #4c5caf;">
+                            <tr style="--rowsBorderWidth: 2px; --rowsBorderColor: #d4d4d4;">
+                                <th>no</th>
+                                <th>tanggal</th>
+
+                                <th>kegiatan</th>
+                                <th>kategori</th>
+                                <th>target</th>
+                                <th>ruangan</th>
+                                <th>dokumentasi</th>
+                                <th>actions</th>
+                            </tr>
+                        </thead>
+                        <tbody style="--bodyTextAlign: left;">
+
+
+
+                            <tr style="--rowsBorderColor: #d4d4d4; --oddRowsBGColor: #ffffff; --oddRowsColor: #000000;">
+                                <td style="border: var(--rowsBorderWidth) solid var(--rowsBorderColor);">1</td>
+                                <td style="border: var(--rowsBorderWidth) solid var(--rowsBorderColor);">03-09-2024</td>
+                                <td style="border: var(--rowsBorderWidth) solid var(--rowsBorderColor);">3</td>
+                                <td style="border: var(--rowsBorderWidth) solid var(--rowsBorderColor);">4</td>
+                                <td style="border: var(--rowsBorderWidth) solid var(--rowsBorderColor);">5</td>
+                                <td style="border: var(--rowsBorderWidth) solid var(--rowsBorderColor);">6</td>
+                                <td style="border: var(--rowsBorderWidth) solid var(--rowsBorderColor);">7</td>
+                                <td style="border: var(--rowsBorderWidth) solid var(--rowsBorderColor);"><a href="#" class="btn btn-hapus">hapus</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- ======== section table end ========== -->
+                <!-- ======== pagination start =========== -->
+                <div class="pagination">
+                    <a href="#" title="first page">First</a>
+                    <a href="#" title="previous page"><svg fill="currentColor">
+                            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                        </svg></a>
+                    <a href="#">1</a>
+                    <a href="#" class="page-active">2</a>
+                    <a href="#">3</a>
+                    <span class="page-dots">...</span>
+                    <a href="#">6</a>
+                    <a href="#" title="next page"><svg fill="currentColor">
+                            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                        </svg></a>
+                    <a href="#" title="last page">Last</a>
+                </div>
+                <!-- ======== pagination end =========== -->
             </div>
         </div>
     </section>

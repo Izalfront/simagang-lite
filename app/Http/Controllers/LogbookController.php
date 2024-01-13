@@ -17,6 +17,11 @@ class LogbookController extends Controller
         return view('logbooks.logbooks');
     }
 
+    public function addLogbook()
+    {
+        return view('logbooks.add');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

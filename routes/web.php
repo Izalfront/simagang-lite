@@ -21,5 +21,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/login', [LoginController::class, 'index']);
 Route::get('/lecturers', [LecturerController::class, 'index']);
 Route::get('/logbooks', [LogbookController::class, 'index']);
+Route::get('/add-logbook', [LogbookController::class, 'addLogbook']);
 // Route::get('supervisors', SupervisorController::class);
 // Route::get('users', UserController::class);
