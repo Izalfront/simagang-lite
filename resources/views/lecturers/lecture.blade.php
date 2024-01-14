@@ -12,22 +12,29 @@
 <body>
     <div class="card">
         <div class="card-body">
-            <h3 class="head__title">Pembimbing Akademik</h3>
-            <div class="card-child">
-                <p class="head__text">Nama Pembimbing</p>
-                <p class="body__text">Subandi</p>
-            </div>
-            <div class="card-child">
-                <p class="head__text">Jabatan</p>
-                <p class="body__text">Ketua Prodi</p>
-            </div>
-            <div class="card-child">
-                <p class="head__text">Nomor Telepon</p>
-                <p class="body__text">08357235</p>
-            </div>
-            <div class="card-child">
-                <p class="head__text">Email</p>
-                <p class="body__text">Subandi@gmail.com</p>
+            <div class="card-profile">
+                <div class="card-img">
+                    <img src="{{ asset('img/user.jpg') }}" alt="User Image">
+                </div>
+                <div class="card__text">
+                    <h3 class="head__title">Pembimbing akademik</h3>
+                    <div class="card-child">
+                        <p class="head__text">Nama Lengkap</p>
+                        <p class="body__text">Maya Mahyuni</p>
+                    </div>
+                    <div class="card-child">
+                        <p class="head__text">NIM/NIS</p>
+                        <p class="body__text">C030239249</p>
+                    </div>
+                    <div class="card-child">
+                        <p class="head__text">Alamat</p>
+                        <p class="body__text">Banjarmasin kayutangi ll jalur V</p>
+                    </div>
+                    <div class="card-child">
+                        <p class="head__text">Nomor Telepon</p>
+                        <p class="body__text">08357235</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
