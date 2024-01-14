@@ -14,11 +14,16 @@
         <div class="card">
             <div class="card-body">
                 <div class="head-section">
+                    <h1 class="head__title">Tambah Logbook</h1>
+                    <div class="btn__submit">
+                        <a href="#" class="btn" style="margin-left: 1rem;">Tambah</a>
+                        <a href="#" class="btn-pdf btn">Kembali</a>
+                    </div>
                     <div>
-                        <a href="#" class=" primary__btn">Tambah</a>
                         <!-- section tambah logbook start -->
                         <form method="post" class="convert__input">
-                            <table style="border-collapse: collapse;">
+                            <table>
+
                                 <tr class="input__group">
                                     <td>
                                         <h5>kegiatan magang</h5>
@@ -70,10 +75,8 @@
                             </table>
 
                         </form>
-
                         <!-- section tambah logbook end -->
                     </div>
-
                 </div>
             </div>
         </div>
