@@ -116,7 +116,7 @@ header .image-text .header-text {
     padding-top: 1rem;
     font-weight: 500;
     font-size: large;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     margin-left: 1.3rem;
 }
 
@@ -214,4 +214,8 @@ header .image-text .header-text {
 .sidebar .close ~ .home {
     margin-left: 88px;
     width: calc(100% - 88px);
+}
+
+.logo {
+    margin-top: 1.2rem;
 }

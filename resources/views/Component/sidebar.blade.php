@@ -15,10 +15,7 @@
     <nav class="sidebar ">
         <header>
             <div class="image-text">
-                <!--<span class="image">
-            <img src="logo.png" alt="" />
-          </span>-->
-
+                <img src="{{ asset('/Logo.jpg') }}" alt="User Image" class="logo">
                 <div class="text header-text">
                     <span class="name">Simagang</span>
                     <span class="profession">Bank Bri</span>

@@ -6,6 +6,8 @@ use App\Http\Controllers\LogbookController;
 use App\Http\Controllers\SupervisorController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+// sidebar testing view
+use App\Http\Controllers\SidebarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +26,4 @@ Route::get('/logbooks', [LogbookController::class, 'index']);
 Route::get('/add-logbook', [LogbookController::class, 'addLogbook']);
 Route::get('/supervisors', [SupervisorController::class, 'index']);
 Route::get('/users', [UserController::class, 'index']);
+Route::get('/sidebar', [SidebarController::class, 'index']);
