@@ -14,12 +14,10 @@ class LogbookController extends Controller
      */
     public function index()
     {
-        return view('logbooks.logbooks');
-    }
+        $user = auth()->user();
+        $logbooks = Logbook::where('user_id', $user->id)->get();
 
-    public function addLogbook()
-    {
-        return view('logbooks.add');
+        return response()->view('logbooks.index', compact('logbooks'));
     }
 
     /**
@@ -29,7 +27,7 @@ class LogbookController extends Controller
      */
     public function create()
     {
-        //
+        return response()->view('logbooks.create');
     }
 
     /**
@@ -40,7 +38,23 @@ class LogbookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'tanggal' => 'required|date',
+            'kegiatan' => 'required',
+            'catatan' => 'required',
+        ]);
+
+        $user = auth()->user();
+
+        Logbook::create([
+            'user_id' => $user->id,
+            'tanggal' => $request->tanggal,
+            'kegiatan' => $request->kegiatan,
+            'catatan' => $request->catatan,
+        ]);
+
+        toast('Logbook harian berhasil ditambahkan.', 'success');
+        return redirect()->route('logbooks.index');
     }
 
     /**
@@ -62,7 +76,9 @@ class LogbookController extends Controller
      */
     public function edit(Logbook $logbook)
     {
-        //
+        $this->authorize('update', $logbook);
+
+        return response()->view('logbooks.edit', compact('logbook'));
     }
 
     /**
@@ -74,7 +90,22 @@ class LogbookController extends Controller
      */
     public function update(Request $request, Logbook $logbook)
     {
-        //
+        $this->authorize('update', $logbook);
+
+        $request->validate([
+            'tanggal' => 'required|date',
+            'kegiatan' => 'required',
+            'catatan' => 'required',
+        ]);
+
+        $logbook->update([
+            'tanggal' => $request->tanggal,
+            'kegiatan' => $request->kegiatan,
+            'catatan' => $request->catatan,
+        ]);
+
+        toast('Logbook berhasil diperbarui.', 'success');
+        return redirect()->route('logbooks.index');
     }
 
     /**
@@ -85,6 +116,11 @@ class LogbookController extends Controller
      */
     public function destroy(Logbook $logbook)
     {
-        //
+        $this->authorize('delete', $logbook);
+
+        $logbook->delete();
+
+        toast('Logbook berhasil dihapus.', 'success');
+        return redirect()->route('logbooks.index');
     }
 }

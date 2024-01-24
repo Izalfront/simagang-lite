@@ -1,13 +1,12 @@
 <?php
 
-use App\Http\Controllers\LoginController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LecturerController;
 use App\Http\Controllers\LogbookController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SupervisorController;
 use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Route;
-// sidebar testing view
-use App\Http\Controllers\SidebarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +19,26 @@ use App\Http\Controllers\SidebarController;
 |
 */
 
-Route::get('/login', [LoginController::class, 'index']);
-Route::get('/lecture', [LecturerController::class, 'index']);
-Route::get('/logbooks', [LogbookController::class, 'index']);
-Route::get('/add-logbook', [LogbookController::class, 'addLogbook']);
-Route::get('/supervisors', [SupervisorController::class, 'index']);
-Route::get('/users', [UserController::class, 'index']);
-Route::get('/sidebar', [SidebarController::class, 'index']);
+Route::get('/', function () {
+    return view('login.index');
+});
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/admin/create', [AdminController::class, 'create'])->name('admin.create');
+Route::post('/admin', [AdminController::class, 'store'])->name('admin.store');
+
+Route::resource('lecturers', LecturerController::class);
+
+Route::resource('logbooks', LogbookController::class);
+
+Route::resource('supervisors', SupervisorController::class);
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
+    Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
+});

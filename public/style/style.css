@@ -63,6 +63,7 @@ input {
 }
 
 button {
+    font-family: "Inter", sans-serif;
     background-color: #4c5caf;
     color: #fff;
     padding: 10px;
@@ -78,7 +79,7 @@ button:hover {
     background-color: #4562a0;
 }
 
-.judul {
+.title {
     margin-bottom: 2rem;
     color: #335bb3;
     margin-bottom: 3rem;
